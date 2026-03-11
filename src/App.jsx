@@ -46,30 +46,194 @@ const T = {
 };
 
 // ─── ALL CARS ────────────────────────────────────────────────────────────────
+// ~100 models covering all major brands available in Singapore (2025/2026 prices incl. COE)
 const ALL_CARS = [
-  { id:"sealion7",     name:"BYD Sealion 7",           short:"Sealion 7",      type:"Electric SUV",   price:215888, omv:38500, coe:"Cat B", loanCap:60, emoji:"🚗",  rateTier:"green", top5:true,  rank:1, badge:"#1 Best Seller 2025" },
-  { id:"corolla",      name:"Toyota Corolla Altis",     short:"Corolla Altis",  type:"Sedan · Hybrid", price:175888, omv:17800, coe:"Cat A", loanCap:70, emoji:"🏆",  rateTier:"green", top5:true,  rank:2, badge:"#1 Model 2025", desc:"Singapore's most-loved sedan. Reliable hybrid, low running costs." },
-  { id:"mazda3",       name:"Mazda 3",                  short:"Mazda 3",        type:"Sedan · Petrol", price:162888, omv:19800, coe:"Cat A", loanCap:70, emoji:"🔴",  rateTier:"ice",   top5:true,  rank:3, badge:"Top 3" },
-  { id:"sienta",       name:"Toyota Sienta",            short:"Sienta",         type:"MPV · Hybrid",   price:168888, omv:16200, coe:"Cat A", loanCap:70, emoji:"🚐",  rateTier:"green", top5:true,  rank:4, badge:"Top 4" },
-  { id:"freed",        name:"Honda Freed e:HEV",        short:"Freed e:HEV",    type:"MPV · Hybrid",   price:163888, omv:15400, coe:"Cat A", loanCap:70, emoji:"🛻",  rateTier:"green", top5:true,  rank:5, badge:"Top 5" },
-  { id:"atto3",        name:"BYD Atto 3",               short:"BYD Atto 3",     type:"Electric SUV",   price:165888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🔋",  rateTier:"green", desc:"The EV that started Singapore's electric revolution. Smart & compact." },
-  { id:"model3",       name:"Tesla Model 3",             short:"Model 3",        type:"Electric Sedan", price:189888, omv:32000, coe:"Cat A", loanCap:60, emoji:"⚡",  rateTier:"tesla", desc:"Silicon Valley's sedan — Autopilot, OTA updates, zero emissions." },
-  { id:"bmwx1",        name:"BMW X1",                    short:"BMW X1",         type:"SUV · Petrol",   price:248888, omv:42000, coe:"Cat B", loanCap:60, emoji:"🇩🇪", rateTier:"ice"   },
-  { id:"bmwix1",       name:"BMW iX1",                   short:"BMW iX1",        type:"Electric SUV",   price:258888, omv:44000, coe:"Cat B", loanCap:60, emoji:"🔵",  rateTier:"green" },
-  { id:"merglb",       name:"Mercedes-Benz GLB",         short:"Merc GLB",       type:"SUV · Petrol",   price:278888, omv:46000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"ice"   },
-  { id:"modely",       name:"Tesla Model Y",             short:"Model Y",        type:"Electric SUV",   price:208888, omv:35000, coe:"Cat A", loanCap:60, emoji:"⚡",  rateTier:"tesla" },
-  { id:"hyukona",      name:"Hyundai Kona Hybrid",       short:"Kona Hybrid",    type:"SUV · Hybrid",   price:166888, omv:19200, coe:"Cat A", loanCap:70, emoji:"🔷",  rateTier:"green" },
-  { id:"byddolphin",   name:"BYD Dolphin",               short:"BYD Dolphin",    type:"Electric Hatch", price:158888, omv:22000, coe:"Cat A", loanCap:60, emoji:"🐬",  rateTier:"green" },
-  { id:"bydm6",        name:"BYD M6",                    short:"BYD M6",         type:"Electric MPV",   price:198888, omv:36000, coe:"Cat B", loanCap:60, emoji:"🚌",  rateTier:"green" },
-  { id:"gacaionv",     name:"GAC Aion V",                short:"GAC Aion V",     type:"Electric SUV",   price:162888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🇨🇳", rateTier:"green" },
-  { id:"civic",        name:"Honda Civic e:HEV",         short:"Civic e:HEV",    type:"Sedan · Hybrid", price:168888, omv:18500, coe:"Cat A", loanCap:70, emoji:"🏎",  rateTier:"green" },
-  { id:"xpengG6",      name:"Xpeng G6",                  short:"Xpeng G6",       type:"Electric SUV",   price:198888, omv:34000, coe:"Cat B", loanCap:60, emoji:"🤖",  rateTier:"green" },
-  { id:"mgzs",         name:"MG ZS EV",                  short:"MG ZS EV",       type:"Electric SUV",   price:158888, omv:23000, coe:"Cat A", loanCap:60, emoji:"🇬🇧", rateTier:"green" },
-  { id:"zeekrx",       name:"Zeekr X",                   short:"Zeekr X",        type:"Electric SUV",   price:178888, omv:29000, coe:"Cat B", loanCap:60, emoji:"💎",  rateTier:"green" },
-  { id:"corollacross", name:"Toyota Corolla Cross HEV",  short:"Corolla Cross",  type:"SUV · Hybrid",   price:189888, omv:21000, coe:"Cat A", loanCap:60, emoji:"🌿",  rateTier:"green" },
-  { id:"mazdacx5",     name:"Mazda CX-5",                short:"Mazda CX-5",     type:"SUV · Petrol",   price:196888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🔵",  rateTier:"ice"   },
-  { id:"subarufore",   name:"Subaru Forester e-Boxer",   short:"Forester",       type:"SUV · Hybrid",   price:195888, omv:24000, coe:"Cat B", loanCap:60, emoji:"⛰",  rateTier:"green" },
-  { id:"nisanserena",  name:"Nissan Serena e-Power",     short:"Serena e-Power", type:"MPV · e-Power",  price:202888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🌊",  rateTier:"green" },
+  // ── TOP 5 BEST SELLERS 2025 ──────────────────────────────────────────────
+  { id:"sealion7",      name:"BYD Sealion 7",              short:"Sealion 7",        type:"Electric SUV",    price:215888, omv:38500, coe:"Cat B", loanCap:60, emoji:"🚗",  rateTier:"green", top5:true, rank:1, badge:"#1 Best Seller 2025", desc:"Singapore's #1 best-selling car. Spacious electric SUV with 520km range." },
+  { id:"corolla",       name:"Toyota Corolla Altis",        short:"Corolla Altis",    type:"Sedan · Hybrid",  price:175888, omv:17800, coe:"Cat A", loanCap:70, emoji:"🏆",  rateTier:"green", top5:true, rank:2, badge:"Top Seller", desc:"Singapore's most trusted sedan. Bulletproof reliability, low running costs." },
+  { id:"mazda3",        name:"Mazda 3",                     short:"Mazda 3",          type:"Sedan · Petrol",  price:162888, omv:19800, coe:"Cat A", loanCap:70, emoji:"🔴",  rateTier:"ice",   top5:true, rank:3, badge:"Top 3", desc:"Premium feel at a mainstream price. KODO design, Skyactiv tech." },
+  { id:"sienta",        name:"Toyota Sienta",               short:"Sienta",           type:"MPV · Hybrid",    price:168888, omv:16200, coe:"Cat A", loanCap:70, emoji:"🚐",  rateTier:"green", top5:true, rank:4, badge:"Top 4", desc:"Singapore's favourite compact MPV. Sliding doors, 7-seats, hybrid." },
+  { id:"freed",         name:"Honda Freed e:HEV",           short:"Freed e:HEV",      type:"MPV · Hybrid",    price:163888, omv:15400, coe:"Cat A", loanCap:70, emoji:"🛻",  rateTier:"green", top5:true, rank:5, badge:"Top 5", desc:"Fun-size MPV with Honda's acclaimed e:HEV full-hybrid system." },
+
+  // ── TOYOTA ────────────────────────────────────────────────────────────────
+  { id:"corollacross",  name:"Toyota Corolla Cross HEV",    short:"Corolla Cross",    type:"SUV · Hybrid",    price:189888, omv:21000, coe:"Cat A", loanCap:60, emoji:"🌿",  rateTier:"green" },
+  { id:"yariscross",    name:"Toyota Yaris Cross",          short:"Yaris Cross",      type:"SUV · Hybrid",    price:175888, omv:17500, coe:"Cat A", loanCap:70, emoji:"🟢",  rateTier:"green" },
+  { id:"harrier",       name:"Toyota Harrier Hybrid",       short:"Harrier Hybrid",   type:"SUV · Hybrid",    price:228888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🦅",  rateTier:"green" },
+  { id:"rav4",          name:"Toyota RAV4 Hybrid",          short:"RAV4 Hybrid",      type:"SUV · Hybrid",    price:257888, omv:30000, coe:"Cat B", loanCap:60, emoji:"🏔",  rateTier:"green" },
+  { id:"camry",         name:"Toyota Camry Hybrid",         short:"Camry Hybrid",     type:"Sedan · Hybrid",  price:246888, omv:27000, coe:"Cat B", loanCap:60, emoji:"👑",  rateTier:"green" },
+  { id:"alphard",       name:"Toyota Alphard HEV",          short:"Alphard",          type:"MPV · Hybrid",    price:398888, omv:46000, coe:"Cat B", loanCap:60, emoji:"👸",  rateTier:"green" },
+  { id:"vellfire",      name:"Toyota Vellfire HEV",         short:"Vellfire",         type:"MPV · Hybrid",    price:418888, omv:48000, coe:"Cat B", loanCap:60, emoji:"✨",  rateTier:"green" },
+  { id:"priusplus",     name:"Toyota Prius Plus",           short:"Prius Plus",       type:"MPV · Hybrid",    price:178888, omv:17000, coe:"Cat A", loanCap:70, emoji:"🍃",  rateTier:"green" },
+  { id:"fortuner",      name:"Toyota Fortuner",             short:"Fortuner",         type:"SUV · Diesel",    price:228888, omv:29000, coe:"Cat B", loanCap:60, emoji:"🏕",  rateTier:"ice" },
+
+  // ── HONDA ─────────────────────────────────────────────────────────────────
+  { id:"civic",         name:"Honda Civic e:HEV",           short:"Civic e:HEV",      type:"Sedan · Hybrid",  price:168888, omv:18500, coe:"Cat A", loanCap:70, emoji:"🏎",  rateTier:"green" },
+  { id:"vezel",         name:"Honda Vezel e:HEV",           short:"Vezel e:HEV",      type:"SUV · Hybrid",    price:156888, omv:16800, coe:"Cat A", loanCap:70, emoji:"🟠",  rateTier:"green", desc:"Compact crossover with class-leading hybrid efficiency." },
+  { id:"hrv",           name:"Honda HR-V e:HEV",            short:"HR-V e:HEV",       type:"SUV · Hybrid",    price:163888, omv:17500, coe:"Cat A", loanCap:70, emoji:"🔶",  rateTier:"green" },
+  { id:"crv",           name:"Honda CR-V e:HEV",            short:"CR-V e:HEV",       type:"SUV · Hybrid",    price:214888, omv:25000, coe:"Cat B", loanCap:60, emoji:"🟤",  rateTier:"green" },
+  { id:"odyssey",       name:"Honda Odyssey e:HEV",         short:"Odyssey e:HEV",    type:"MPV · Hybrid",    price:248888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🚀",  rateTier:"green" },
+  { id:"zrv",           name:"Honda ZR-V e:HEV",            short:"ZR-V e:HEV",       type:"SUV · Hybrid",    price:189888, omv:21500, coe:"Cat A", loanCap:60, emoji:"🔥",  rateTier:"green" },
+
+  // ── MAZDA ─────────────────────────────────────────────────────────────────
+  { id:"mazdacx5",      name:"Mazda CX-5",                  short:"Mazda CX-5",       type:"SUV · Petrol",    price:196888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🔵",  rateTier:"ice" },
+  { id:"mazdacx30",     name:"Mazda CX-30",                 short:"Mazda CX-30",      type:"SUV · Petrol",    price:178888, omv:20500, coe:"Cat B", loanCap:60, emoji:"🔷",  rateTier:"ice" },
+  { id:"mazdacx8",      name:"Mazda CX-8",                  short:"Mazda CX-8",       type:"SUV · Petrol",    price:246888, omv:32000, coe:"Cat B", loanCap:60, emoji:"🔮",  rateTier:"ice" },
+  { id:"mazda2",        name:"Mazda 2 Hybrid",              short:"Mazda 2 Hybrid",   type:"Sedan · Hybrid",  price:153888, omv:15000, coe:"Cat A", loanCap:70, emoji:"❤",   rateTier:"green" },
+  { id:"mazdacx90",     name:"Mazda CX-90 PHEV",            short:"CX-90 PHEV",       type:"SUV · PHEV",      price:326888, omv:47000, coe:"Cat B", loanCap:60, emoji:"🌌",  rateTier:"green" },
+
+  // ── HYUNDAI ───────────────────────────────────────────────────────────────
+  { id:"hyukona",       name:"Hyundai Kona Hybrid",         short:"Kona Hybrid",      type:"SUV · Hybrid",    price:166888, omv:19200, coe:"Cat A", loanCap:70, emoji:"🔷",  rateTier:"green" },
+  { id:"hyukonae",      name:"Hyundai Kona Electric",       short:"Kona Electric",    type:"Electric SUV",    price:184888, omv:24000, coe:"Cat A", loanCap:60, emoji:"⚡",  rateTier:"green" },
+  { id:"ioniq6",        name:"Hyundai Ioniq 6",             short:"Ioniq 6",          type:"Electric Sedan",  price:182888, omv:30000, coe:"Cat A", loanCap:60, emoji:"🛸",  rateTier:"green", desc:"Streamlined EV sedan. 614km range, ultra-fast 800V charging." },
+  { id:"ioniq5",        name:"Hyundai Ioniq 5",             short:"Ioniq 5",          type:"Electric SUV",    price:193888, omv:32000, coe:"Cat A", loanCap:60, emoji:"🔋",  rateTier:"green" },
+  { id:"tucson",        name:"Hyundai Tucson Hybrid",       short:"Tucson Hybrid",    type:"SUV · Hybrid",    price:198888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🟦",  rateTier:"green" },
+  { id:"santa",         name:"Hyundai Santa Fe Hybrid",     short:"Santa Fe HEV",     type:"SUV · Hybrid",    price:248888, omv:33000, coe:"Cat B", loanCap:60, emoji:"🏔",  rateTier:"green" },
+  { id:"staria",        name:"Hyundai Staria",              short:"Staria",           type:"MPV · Diesel",    price:228888, omv:30000, coe:"Cat B", loanCap:60, emoji:"🚌",  rateTier:"ice" },
+
+  // ── KIA ───────────────────────────────────────────────────────────────────
+  { id:"kiastonic",     name:"Kia Stonic",                  short:"Kia Stonic",       type:"SUV · Hybrid",    price:148888, omv:14500, coe:"Cat A", loanCap:70, emoji:"🟨",  rateTier:"green", desc:"Singapore's most affordable new car. Compact urban crossover." },
+  { id:"kiaseltos",     name:"Kia Seltos",                  short:"Kia Seltos",       type:"SUV · Petrol",    price:176888, omv:20000, coe:"Cat B", loanCap:60, emoji:"🎯",  rateTier:"ice" },
+  { id:"kiaev6",        name:"Kia EV6",                     short:"Kia EV6",          type:"Electric SUV",    price:224888, omv:36000, coe:"Cat B", loanCap:60, emoji:"🔆",  rateTier:"green" },
+  { id:"kianiro",       name:"Kia Niro EV",                 short:"Niro EV",          type:"Electric SUV",    price:186888, omv:27000, coe:"Cat B", loanCap:60, emoji:"🌱",  rateTier:"green" },
+  { id:"kiasorento",    name:"Kia Sorento Hybrid",          short:"Sorento Hybrid",   type:"SUV · Hybrid",    price:254888, omv:34000, coe:"Cat B", loanCap:60, emoji:"🦁",  rateTier:"green" },
+  { id:"kiacarnival",   name:"Kia Carnival",                short:"Carnival",         type:"MPV · Petrol",    price:268888, omv:36000, coe:"Cat B", loanCap:60, emoji:"🎪",  rateTier:"ice" },
+
+  // ── BYD ───────────────────────────────────────────────────────────────────
+  { id:"byddolphin",    name:"BYD Dolphin",                 short:"BYD Dolphin",      type:"Electric Hatch",  price:158888, omv:22000, coe:"Cat A", loanCap:60, emoji:"🐬",  rateTier:"green", desc:"Affordable city EV with peppy performance and cheeky styling." },
+  { id:"atto3",         name:"BYD Atto 3",                  short:"BYD Atto 3",       type:"Electric SUV",    price:169888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🔋",  rateTier:"green" },
+  { id:"bydm6",         name:"BYD M6",                      short:"BYD M6",           type:"Electric MPV",    price:198888, omv:36000, coe:"Cat B", loanCap:60, emoji:"🚌",  rateTier:"green" },
+  { id:"bydatto4",      name:"BYD Atto 5",                  short:"BYD Atto 5",       type:"Electric SUV",    price:218888, omv:39000, coe:"Cat B", loanCap:60, emoji:"🔮",  rateTier:"green" },
+  { id:"bydseal",       name:"BYD Seal",                    short:"BYD Seal",         type:"Electric Sedan",  price:198888, omv:33000, coe:"Cat A", loanCap:60, emoji:"🦭",  rateTier:"green", desc:"BYD's sporty performance sedan. 0–100 in 3.8s (AWD)." },
+  { id:"bydseagull",    name:"BYD Seagull",                 short:"BYD Seagull",      type:"Electric Hatch",  price:148888, omv:18000, coe:"Cat A", loanCap:70, emoji:"🐦",  rateTier:"green", desc:"Most affordable EV in Singapore. Ultra-efficient city car." },
+  { id:"bydsealion6",   name:"BYD Sealion 6 PHEV",         short:"Sealion 6",        type:"SUV · PHEV",      price:188888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🌊",  rateTier:"green" },
+  { id:"bydtang",       name:"BYD Tang EV",                 short:"BYD Tang",         type:"Electric SUV",    price:268888, omv:48000, coe:"Cat B", loanCap:60, emoji:"🐉",  rateTier:"green" },
+
+  // ── TESLA ─────────────────────────────────────────────────────────────────
+  { id:"model3",        name:"Tesla Model 3",               short:"Model 3",          type:"Electric Sedan",  price:189888, omv:32000, coe:"Cat A", loanCap:60, emoji:"⚡",  rateTier:"tesla", desc:"The world's best-selling EV. Autopilot, 554km range, OTA updates." },
+  { id:"modely",        name:"Tesla Model Y",               short:"Model Y",          type:"Electric SUV",    price:208888, omv:35000, coe:"Cat A", loanCap:60, emoji:"⚡",  rateTier:"tesla", desc:"Global #1 SUV. RWD or AWD, up to 533km range, massive boot." },
+  { id:"modelylong",    name:"Tesla Model Y Long Range AWD",short:"Model Y LR",       type:"Electric SUV",    price:238888, omv:38000, coe:"Cat B", loanCap:60, emoji:"⚡",  rateTier:"tesla" },
+  { id:"model3perf",    name:"Tesla Model 3 Performance",   short:"Model 3 Perf",     type:"Electric Sedan",  price:248888, omv:43000, coe:"Cat B", loanCap:60, emoji:"⚡",  rateTier:"tesla" },
+
+  // ── BMW ───────────────────────────────────────────────────────────────────
+  { id:"bmw1",          name:"BMW 118i",                    short:"BMW 118i",         type:"Hatch · Petrol",  price:228888, omv:36000, coe:"Cat A", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+  { id:"bmw3",          name:"BMW 320i",                    short:"BMW 320i",         type:"Sedan · Petrol",  price:278888, omv:44000, coe:"Cat A", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+  { id:"bmw5",          name:"BMW 520i",                    short:"BMW 520i",         type:"Sedan · Petrol",  price:348888, omv:57000, coe:"Cat A", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+  { id:"bmwx1",         name:"BMW X1",                      short:"BMW X1",           type:"SUV · Petrol",    price:248888, omv:42000, coe:"Cat B", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+  { id:"bmwix1",        name:"BMW iX1",                     short:"BMW iX1",          type:"Electric SUV",    price:268888, omv:44000, coe:"Cat B", loanCap:60, emoji:"🔵",  rateTier:"green" },
+  { id:"bmwx3",         name:"BMW X3",                      short:"BMW X3",           type:"SUV · Petrol",    price:318888, omv:52000, coe:"Cat B", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+  { id:"bmwi4",         name:"BMW i4",                      short:"BMW i4",           type:"Electric Sedan",  price:318888, omv:53000, coe:"Cat A", loanCap:60, emoji:"🔵",  rateTier:"green" },
+  { id:"bmwi3s",        name:"BMW i3s",                     short:"BMW i3s",          type:"Electric SUV",    price:200888, omv:33000, coe:"Cat A", loanCap:60, emoji:"🔵",  rateTier:"green" },
+  { id:"bmwx5",         name:"BMW X5 xDrive40i",            short:"BMW X5",           type:"SUV · Petrol",    price:468888, omv:75000, coe:"Cat B", loanCap:60, emoji:"🇩🇪", rateTier:"ice" },
+
+  // ── MERCEDES-BENZ ─────────────────────────────────────────────────────────
+  { id:"mera",          name:"Mercedes-Benz A200",          short:"Merc A200",        type:"Hatch · Petrol",  price:248888, omv:38000, coe:"Cat A", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"merc",          name:"Mercedes-Benz C200",          short:"Merc C200",        type:"Sedan · Petrol",  price:298888, omv:50000, coe:"Cat A", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"mere",          name:"Mercedes-Benz E200",          short:"Merc E200",        type:"Sedan · Petrol",  price:358888, omv:60000, coe:"Cat A", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"merglb",        name:"Mercedes-Benz GLB",           short:"Merc GLB",         type:"SUV · Petrol",    price:278888, omv:46000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"merglc",        name:"Mercedes-Benz GLC",           short:"Merc GLC",         type:"SUV · Petrol",    price:318888, omv:52000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"megle",         name:"Mercedes-Benz GLE",           short:"Merc GLE",         type:"SUV · Petrol",    price:448888, omv:70000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"ice" },
+  { id:"mereqa",        name:"Mercedes-Benz EQA",           short:"Merc EQA",         type:"Electric SUV",    price:278888, omv:46000, coe:"Cat B", loanCap:60, emoji:"🌟",  rateTier:"green" },
+  { id:"mereqb",        name:"Mercedes-Benz EQB",           short:"Merc EQB",         type:"Electric SUV",    price:308888, omv:50000, coe:"Cat B", loanCap:60, emoji:"🌟",  rateTier:"green" },
+
+  // ── AUDI ──────────────────────────────────────────────────────────────────
+  { id:"audia3",        name:"Audi A3 Sportback",           short:"Audi A3",          type:"Hatch · Petrol",  price:248888, omv:40000, coe:"Cat A", loanCap:60, emoji:"🔘",  rateTier:"ice" },
+  { id:"audia4",        name:"Audi A4",                     short:"Audi A4",          type:"Sedan · Petrol",  price:308888, omv:51000, coe:"Cat A", loanCap:60, emoji:"🔘",  rateTier:"ice" },
+  { id:"audiq3",        name:"Audi Q3",                     short:"Audi Q3",          type:"SUV · Petrol",    price:278888, omv:45000, coe:"Cat B", loanCap:60, emoji:"🔘",  rateTier:"ice" },
+  { id:"audiq5",        name:"Audi Q5",                     short:"Audi Q5",          type:"SUV · Petrol",    price:338888, omv:55000, coe:"Cat B", loanCap:60, emoji:"🔘",  rateTier:"ice" },
+  { id:"audie-tron",    name:"Audi Q8 e-tron",              short:"Q8 e-tron",        type:"Electric SUV",    price:398888, omv:65000, coe:"Cat B", loanCap:60, emoji:"💡",  rateTier:"green" },
+
+  // ── VOLKSWAGEN ────────────────────────────────────────────────────────────
+  { id:"vwgolf",        name:"Volkswagen Golf",             short:"VW Golf",          type:"Hatch · Petrol",  price:192888, omv:27000, coe:"Cat A", loanCap:60, emoji:"🏌",  rateTier:"ice", desc:"The original hot hatch benchmark. Refined, practical, sporty." },
+  { id:"vwtiguan",      name:"Volkswagen Tiguan",           short:"VW Tiguan",        type:"SUV · Petrol",    price:228888, omv:34000, coe:"Cat B", loanCap:60, emoji:"🐯",  rateTier:"ice" },
+  { id:"vwpassat",      name:"Volkswagen Passat",           short:"VW Passat",        type:"Sedan · PHEV",    price:258888, omv:39000, coe:"Cat A", loanCap:60, emoji:"🌐",  rateTier:"green" },
+  { id:"vwid4",         name:"Volkswagen ID.4",             short:"VW ID.4",          type:"Electric SUV",    price:248888, omv:40000, coe:"Cat B", loanCap:60, emoji:"🌀",  rateTier:"green" },
+  { id:"vwid3",         name:"Volkswagen ID.3",             short:"VW ID.3",          type:"Electric Hatch",  price:218888, omv:33000, coe:"Cat A", loanCap:60, emoji:"🌀",  rateTier:"green" },
+
+  // ── VOLVO ─────────────────────────────────────────────────────────────────
+  { id:"volvoxc40",     name:"Volvo XC40 Recharge",         short:"XC40 Recharge",    type:"Electric SUV",    price:268888, omv:43000, coe:"Cat B", loanCap:60, emoji:"🔰",  rateTier:"green" },
+  { id:"volvoxc60",     name:"Volvo XC60 Recharge",         short:"XC60 PHEV",        type:"SUV · PHEV",      price:318888, omv:52000, coe:"Cat B", loanCap:60, emoji:"🔰",  rateTier:"green" },
+  { id:"volvoc40",      name:"Volvo C40 Recharge",          short:"C40 Recharge",     type:"Electric SUV",    price:278888, omv:45000, coe:"Cat B", loanCap:60, emoji:"🔰",  rateTier:"green" },
+  { id:"volvoex30",     name:"Volvo EX30",                  short:"Volvo EX30",       type:"Electric SUV",    price:228888, omv:35000, coe:"Cat B", loanCap:60, emoji:"🔰",  rateTier:"green", desc:"Volvo's smallest EV. Scandinavian safety, urban-friendly size." },
+
+  // ── SUBARU ────────────────────────────────────────────────────────────────
+  { id:"subarufore",    name:"Subaru Forester e-Boxer",     short:"Forester",         type:"SUV · Hybrid",    price:195888, omv:24000, coe:"Cat B", loanCap:60, emoji:"⛰",  rateTier:"green" },
+  { id:"subaruout",     name:"Subaru Outback e-Boxer",      short:"Outback",          type:"SUV · Hybrid",    price:214888, omv:27000, coe:"Cat B", loanCap:60, emoji:"🌲",  rateTier:"green" },
+  { id:"subaruxv",      name:"Subaru XV e-Boxer",           short:"Subaru XV",        type:"SUV · Hybrid",    price:168888, omv:18500, coe:"Cat A", loanCap:70, emoji:"🗻",  rateTier:"green" },
+
+  // ── NISSAN ────────────────────────────────────────────────────────────────
+  { id:"nisanserena",   name:"Nissan Serena e-Power",       short:"Serena e-Power",   type:"MPV · e-Power",   price:202888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🌊",  rateTier:"green" },
+  { id:"nisanleaf",     name:"Nissan Leaf",                 short:"Nissan Leaf",      type:"Electric Hatch",  price:172888, omv:24000, coe:"Cat A", loanCap:60, emoji:"🍃",  rateTier:"green" },
+  { id:"nisanariya",    name:"Nissan Ariya",                short:"Nissan Ariya",     type:"Electric SUV",    price:224888, omv:36000, coe:"Cat B", loanCap:60, emoji:"🌙",  rateTier:"green" },
+  { id:"nisannote",     name:"Nissan Note e-Power",         short:"Note e-Power",     type:"Hatch · e-Power", price:145888, omv:14000, coe:"Cat A", loanCap:70, emoji:"📝",  rateTier:"green" },
+
+  // ── MITSUBISHI ────────────────────────────────────────────────────────────
+  { id:"mitout",        name:"Mitsubishi Outlander PHEV",   short:"Outlander PHEV",   type:"SUV · PHEV",      price:238888, omv:32000, coe:"Cat B", loanCap:60, emoji:"🌐",  rateTier:"green" },
+  { id:"mitasxe",       name:"Mitsubishi ASX",              short:"Mitsubishi ASX",   type:"SUV · Hybrid",    price:168888, omv:19500, coe:"Cat A", loanCap:70, emoji:"🏹",  rateTier:"green" },
+  { id:"miteclipse",    name:"Mitsubishi Eclipse Cross PHEV",short:"Eclipse Cross",   type:"SUV · PHEV",      price:218888, omv:28000, coe:"Cat B", loanCap:60, emoji:"🌑",  rateTier:"green" },
+
+  // ── MG ────────────────────────────────────────────────────────────────────
+  { id:"mgzs",          name:"MG ZS EV",                    short:"MG ZS EV",         type:"Electric SUV",    price:158888, omv:23000, coe:"Cat A", loanCap:60, emoji:"🇬🇧", rateTier:"green" },
+  { id:"mg4",           name:"MG4 Electric",                short:"MG4 EV",           type:"Electric Hatch",  price:168888, omv:24000, coe:"Cat A", loanCap:60, emoji:"🇬🇧", rateTier:"green" },
+  { id:"mghsev",        name:"MG HS PHEV",                  short:"MG HS PHEV",       type:"SUV · PHEV",      price:188888, omv:27000, coe:"Cat B", loanCap:60, emoji:"🇬🇧", rateTier:"green" },
+
+  // ── XPENG ─────────────────────────────────────────────────────────────────
+  { id:"xpengG6",       name:"Xpeng G6",                    short:"Xpeng G6",         type:"Electric SUV",    price:198888, omv:34000, coe:"Cat B", loanCap:60, emoji:"🤖",  rateTier:"green" },
+  { id:"xpengG9",       name:"Xpeng G9",                    short:"Xpeng G9",         type:"Electric SUV",    price:248888, omv:42000, coe:"Cat B", loanCap:60, emoji:"🤖",  rateTier:"green" },
+  { id:"xpengP7",       name:"Xpeng P7",                    short:"Xpeng P7",         type:"Electric Sedan",  price:208888, omv:36000, coe:"Cat A", loanCap:60, emoji:"🤖",  rateTier:"green" },
+
+  // ── ZEEKR ─────────────────────────────────────────────────────────────────
+  { id:"zeekrx",        name:"Zeekr X",                     short:"Zeekr X",          type:"Electric SUV",    price:178888, omv:29000, coe:"Cat B", loanCap:60, emoji:"💎",  rateTier:"green" },
+  { id:"zeekr001",      name:"Zeekr 001",                   short:"Zeekr 001",        type:"Electric Fastback",price:268888, omv:48000, coe:"Cat B", loanCap:60, emoji:"💎",  rateTier:"green" },
+  { id:"zeekr7x",       name:"Zeekr 7X",                    short:"Zeekr 7X",         type:"Electric SUV",    price:228888, omv:39000, coe:"Cat B", loanCap:60, emoji:"💎",  rateTier:"green" },
+
+  // ── GAC / AION ────────────────────────────────────────────────────────────
+  { id:"gacaionv",      name:"GAC Aion V",                  short:"GAC Aion V",       type:"Electric SUV",    price:162888, omv:26000, coe:"Cat B", loanCap:60, emoji:"🇨🇳", rateTier:"green" },
+  { id:"gacaiony",      name:"GAC Aion Y Plus",             short:"Aion Y Plus",      type:"Electric SUV",    price:149888, omv:21000, coe:"Cat A", loanCap:60, emoji:"🇨🇳", rateTier:"green" },
+  { id:"gachyper",      name:"GAC Hyper GT",                short:"Hyper GT",         type:"Electric Sedan",  price:198888, omv:34000, coe:"Cat A", loanCap:60, emoji:"🇨🇳", rateTier:"green" },
+
+  // ── MINI ──────────────────────────────────────────────────────────────────
+  { id:"minicooper",    name:"MINI Cooper S",               short:"MINI Cooper S",    type:"Hatch · Petrol",  price:238888, omv:37000, coe:"Cat A", loanCap:60, emoji:"🎀",  rateTier:"ice" },
+  { id:"minielectric",  name:"MINI Cooper SE Electric",     short:"MINI Cooper SE",   type:"Electric Hatch",  price:248888, omv:38000, coe:"Cat A", loanCap:60, emoji:"🎀",  rateTier:"green" },
+  { id:"minicountry",   name:"MINI Countryman SE",          short:"Countryman SE",    type:"Electric SUV",    price:288888, omv:46000, coe:"Cat B", loanCap:60, emoji:"🎀",  rateTier:"green" },
+
+  // ── SUZUKI ────────────────────────────────────────────────────────────────
+  { id:"suzuswift",     name:"Suzuki Swift 1.2 Mild Hybrid",short:"Suzuki Swift",     type:"Hatch · Hybrid",  price:149888, omv:12000, coe:"Cat A", loanCap:70, emoji:"🌀",  rateTier:"green", desc:"Singapore's most affordable new car. Nippy, frugal, easy to park." },
+  { id:"suzubaleno",    name:"Suzuki Baleno",               short:"Suzuki Baleno",    type:"Sedan · Petrol",  price:138888, omv:11500, coe:"Cat A", loanCap:70, emoji:"💨",  rateTier:"ice" },
+  { id:"suzuvitara",    name:"Suzuki Vitara Hybrid",        short:"Vitara Hybrid",    type:"SUV · Hybrid",    price:169888, omv:17800, coe:"Cat A", loanCap:70, emoji:"🌿",  rateTier:"green" },
+
+  // ── POLESTAR ──────────────────────────────────────────────────────────────
+  { id:"polestar2",     name:"Polestar 2",                  short:"Polestar 2",       type:"Electric Sedan",  price:258888, omv:43000, coe:"Cat A", loanCap:60, emoji:"⭐",  rateTier:"green", desc:"Volvo-born premium EV. Google-based infotainment, vegan interior." },
+  { id:"polestar3",     name:"Polestar 3",                  short:"Polestar 3",       type:"Electric SUV",    price:308888, omv:52000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"green" },
+  { id:"polestar4",     name:"Polestar 4",                  short:"Polestar 4",       type:"Electric SUV",    price:278888, omv:46000, coe:"Cat B", loanCap:60, emoji:"⭐",  rateTier:"green" },
+
+  // ── LEXUS ─────────────────────────────────────────────────────────────────
+  { id:"lexusux",       name:"Lexus UX 300e",               short:"Lexus UX 300e",    type:"Electric SUV",    price:258888, omv:42000, coe:"Cat B", loanCap:60, emoji:"🏮",  rateTier:"green" },
+  { id:"lexusnx",       name:"Lexus NX 350h",               short:"Lexus NX",         type:"SUV · Hybrid",    price:298888, omv:48000, coe:"Cat B", loanCap:60, emoji:"🏮",  rateTier:"green" },
+  { id:"lexuses",       name:"Lexus ES 300h",               short:"Lexus ES",         type:"Sedan · Hybrid",  price:308888, omv:50000, coe:"Cat A", loanCap:60, emoji:"🏮",  rateTier:"green" },
+  { id:"lexusrz",       name:"Lexus RZ 450e",               short:"Lexus RZ",         type:"Electric SUV",    price:338888, omv:56000, coe:"Cat B", loanCap:60, emoji:"🏮",  rateTier:"green" },
+
+  // ── CHERY / OMODA / JAECOO ────────────────────────────────────────────────
+  { id:"omoda5",        name:"Omoda 5 EV",                  short:"Omoda 5",          type:"Electric SUV",    price:168888, omv:25000, coe:"Cat B", loanCap:60, emoji:"🦋",  rateTier:"green" },
+  { id:"jaecoo7",       name:"Jaecoo 7",                    short:"Jaecoo 7",         type:"SUV · Petrol",    price:158888, omv:23000, coe:"Cat B", loanCap:60, emoji:"🌵",  rateTier:"ice" },
+
+  // ── DEEPAL / SERES / SMART ────────────────────────────────────────────────
+  { id:"deepalS7",      name:"Deepal S7",                   short:"Deepal S7",        type:"Electric SUV",    price:188888, omv:30000, coe:"Cat B", loanCap:60, emoji:"🌊",  rateTier:"green" },
+  { id:"smart1",        name:"smart #1",                    short:"smart #1",         type:"Electric SUV",    price:178888, omv:28000, coe:"Cat B", loanCap:60, emoji:"💡",  rateTier:"green" },
+  { id:"smart3",        name:"smart #3",                    short:"smart #3",         type:"Electric SUV",    price:198888, omv:32000, coe:"Cat B", loanCap:60, emoji:"💡",  rateTier:"green" },
+
+  // ── SKODA ─────────────────────────────────────────────────────────────────
+  { id:"skodaoctavia",  name:"Skoda Octavia",               short:"Skoda Octavia",    type:"Sedan · Petrol",  price:178888, omv:24000, coe:"Cat A", loanCap:60, emoji:"🟩",  rateTier:"ice" },
+  { id:"skodaenyaq",    name:"Skoda Enyaq iV",              short:"Enyaq iV",         type:"Electric SUV",    price:258888, omv:42000, coe:"Cat B", loanCap:60, emoji:"🟩",  rateTier:"green" },
+  { id:"skodasuperb",   name:"Skoda Superb",                short:"Skoda Superb",     type:"Sedan · PHEV",    price:228888, omv:34000, coe:"Cat A", loanCap:60, emoji:"🟩",  rateTier:"green" },
+
+  // ── PORSCHE ───────────────────────────────────────────────────────────────
+  { id:"porschetaycan", name:"Porsche Taycan",              short:"Taycan",           type:"Electric Sedan",  price:498888, omv:82000, coe:"Cat B", loanCap:60, emoji:"🏎",  rateTier:"green" },
+  { id:"porschemc",     name:"Porsche Macan Electric",      short:"Macan EV",         type:"Electric SUV",    price:458888, omv:75000, coe:"Cat B", loanCap:60, emoji:"🏎",  rateTier:"green" },
+  { id:"porschecay",    name:"Porsche Cayenne E-Hybrid",    short:"Cayenne PHEV",     type:"SUV · PHEV",      price:568888, omv:92000, coe:"Cat B", loanCap:60, emoji:"🏎",  rateTier:"green" },
+
+  // ── LAND ROVER / RANGE ROVER ──────────────────────────────────────────────
+  { id:"rangesport",    name:"Range Rover Sport",           short:"RR Sport",         type:"SUV · PHEV",      price:598888, omv:96000, coe:"Cat B", loanCap:60, emoji:"👑",  rateTier:"green" },
+  { id:"defender",      name:"Land Rover Defender 110",     short:"Defender 110",     type:"SUV · Petrol",    price:498888, omv:80000, coe:"Cat B", loanCap:60, emoji:"🛡",  rateTier:"ice" },
 ];
 
 const TOP5 = ALL_CARS.filter(c => c.top5).sort((a,b) => a.rank - b.rank);
@@ -474,7 +638,7 @@ function CarPicker({ value, onChange, slot }) {
 
     {/* LIVE SEARCH */}
     <div>
-      <div style={{fontSize:T.xs,fontWeight:600,color:T.textMuted,textTransform:"uppercase",letterSpacing:"0.1em",marginBottom:8}}>🔍 Or search all 23 models</div>
+      <div style={{fontSize:T.xs,fontWeight:600,color:T.textMuted,textTransform:"uppercase",letterSpacing:"0.1em",marginBottom:8}}>🔍 Or search all 100+ models</div>
       <div style={{position:"relative"}}>
         <div style={{position:"relative"}}>
           <span style={{position:"absolute",left:13,top:"50%",transform:"translateY(-50%)",fontSize:15,pointerEvents:"none",opacity:0.4}}>🔍</span>
